@@ -19,20 +19,19 @@
 
     <script>
         function RegExpTest() {
-            var user_Test_String = document.getElementById("Test_String").value; // sets user_Test_String = to the inputed value of word 1
-            var user_Regular_Expression = document.getElementById("Regular_Expression").value; // sets user_Regular_Expression = to the inputed value of word 2
-            var regex_word = RegExp(user_Regular_Expression); // sets regex_word = to the RegExp value of user_Regular_Expression
+            user_Test_String = document.getElementById("Test_String").value;
+            user_Regular_Expression = document.getElementById("Regular_Expression").value;
+            regex_word = RegExp(user_Regular_Expression);
 
             if (user_Test_String === '') {
-                document.getElementById("result").value = 'ERROR: enter word 1' // error check if word 1 is not entered
+                document.getElementById("result").value = 'Please enter a Text String'  // Will display if the Test String field is left blank.
             } else if (user_Regular_Expression === '') {
-                document.getElementById("result").value = 'ERROR: enter word 2' // error check if word 2 is not entered
+                document.getElementById("result").value = 'Please enter a Regular Expression'   // Will display if the Regular Expression field is left blank.
             } else if (user_Regular_Expression === '') {
             } else {
-                document.getElementById("result").value = regex_word.test(user_Test_String); // checks to see if Test_String is equal to the regexp
+                document.getElementById("result").value = regex_word.test(user_Test_String);    // Determines result.
             }   
         }
-
     </script>
     
     <body>
@@ -43,14 +42,14 @@
             <!-- Section for Regular Expression Input -->
             <label for="Regular_Expression">Regular Expression:</label>
             <br>
-            <input type="text" id="Regular_Expression" name="Regular_Expression" style="height: 24px;"><br><br>
+            <input type="text" id="Regular_Expression" name="Regular_Expression"><br><br>
 
             <!-- Section for Test String Input -->
             <label for="Test_String">Test String:</label>
             <br>
-            <input type="text" id="Test_String" name="Test_String" style="height: 24px;"><br><br>
+            <input type="text" id="Test_String" name="Test_String"><br><br>
             
-            <!-- Section for Button -->
+            <!-- Test Regular Expression Button -->
             <button type="button" class="button" onclick="RegExpTest(Test_String, Regular_Expression)">
                 Test Regular Expression
             </button><br><br>
@@ -58,28 +57,7 @@
             <!-- Section for Result -->
             <label>Match:</label>
             <br>
-            <input id="result" type="text" value="" size="20" style="height: 24px;" disabled >
+            <input id="result" type="text" value="" size="20" disabled >
         </form>
     </body>
-    <!--
-    <body>
-        <h1>Regular Expression Tester</h1><br><br>
-        <div>
-            <label>Enter a word or string:</label><br>
-            <input><br><br>
-            <label>Enter a regular expression:</label><br>
-            <input><br><br>
-            <label>Regular Expression Results:</label><br>
-            <input><br><br><br>
-                    
-            <!-- Test Regular Expression Button --> <!--
-            <button class="button" type="button" onclick="ExpressionTest()">
-                Test Regular Expression
-            </button>
-                    
-            <br><br><br><br><br><br>
-            
-        </div>
-    </body>
-    -->
 </html>

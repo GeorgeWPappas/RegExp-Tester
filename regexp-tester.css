@@ -3,6 +3,9 @@ body {
     margin-right: 50px;
     font-family: "Arial", Arial, Sans-serif;
     text-align: center;
+    width: auto;
+    height: auto;
+    background-color: rgb(191, 191, 191);
 }
     
 h1 {
@@ -23,13 +26,12 @@ form {
 .button {
     background-color: rgb(15, 170, 255);
     border-radius: 10px;
-    padding: 10px;
+    padding: 10px
 }
 
 input {
     size: 500px;
-    width: 20%;
-    text-align: center;
-    border: none;
+    height: 24px;
+    width: 60%;
     border-bottom: 2px solid #B8BAB2
 }
