@@ -18,33 +18,50 @@
     </head>
 
     <script>
-        function ExpressionTest() {
-            // Get input from user.
-            var test_word = document.getElementById("test_word").value;
-            var regExp = document.getElementById("regExp").value;
-            
-            // Convert user input to string.
-            test_word = String(test_word);
-            
-            // Generate regular expression.
-            var regex = new RegExp(regExp);
+        function RegExpTest() {
+            var user_Test_String = document.getElementById("Test_String").value; // sets user_Test_String = to the inputed value of word 1
+            var user_Regular_Expression = document.getElementById("Regular_Expression").value; // sets user_Regular_Expression = to the inputed value of word 2
+            var regex_word = RegExp(user_Regular_Expression); // sets regex_word = to the RegExp value of user_Regular_Expression
 
-            // Test regular expression with test word.
-            var test = regex.test(test_word);
-
-            // Error checking user input prior to reporting regex
-            if (test_word === "" && regExp === "") {
-                document.getElementById("result").value = "Invalid: Can you work with me here! Be nice. >:)" 
-            } else if (test_word === "") {
-                document.getElementById("result").value = "Invalid: Please enter a word or string"
-            } else if (regExp === "" )  {
-                document.getElementById("result").value = "Invalid: Please enter a regular expression"
+            if (user_Test_String === '') {
+                document.getElementById("result").value = 'ERROR: enter word 1' // error check if word 1 is not entered
+            } else if (user_Regular_Expression === '') {
+                document.getElementById("result").value = 'ERROR: enter word 2' // error check if word 2 is not entered
+            } else if (user_Regular_Expression === '') {
             } else {
-                document.getElementById("result").value = test;
-            }             
+                document.getElementById("result").value = regex_word.test(user_Test_String); // checks to see if Test_String is equal to the regexp
+            }   
         }
-    </script>
 
+    </script>
+    
+    <body>
+        <!-- Heading Section -->
+        <h1>Regular Expression Tester</h1><br><br>
+
+        <form>
+            <!-- Section for Regular Expression Input -->
+            <label for="Regular_Expression">Regular Expression:</label>
+            <br>
+            <input type="text" id="Regular_Expression" name="Regular_Expression" style="height: 24px;"><br><br>
+
+            <!-- Section for Test String Input -->
+            <label for="Test_String">Test String:</label>
+            <br>
+            <input type="text" id="Test_String" name="Test_String" style="height: 24px;"><br><br>
+            
+            <!-- Section for Button -->
+            <button type="button" class="button" onclick="RegExpTest(Test_String, Regular_Expression)">
+                Test Regular Expression
+            </button><br><br>
+
+            <!-- Section for Result -->
+            <label>Match:</label>
+            <br>
+            <input id="result" type="text" value="" size="20" style="height: 24px;" disabled >
+        </form>
+    </body>
+    <!--
     <body>
         <h1>Regular Expression Tester</h1><br><br>
         <div>
@@ -55,7 +72,7 @@
             <label>Regular Expression Results:</label><br>
             <input><br><br><br>
                     
-            <!-- Test Regular Expression Button -->
+            <!-- Test Regular Expression Button --> <!--
             <button class="button" type="button" onclick="ExpressionTest()">
                 Test Regular Expression
             </button>
@@ -64,4 +81,5 @@
             
         </div>
     </body>
+    -->
 </html>
